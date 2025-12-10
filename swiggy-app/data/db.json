@@ -1,0 +1,57 @@
+{
+    "image": [
+        {
+            "id": 1,
+            "imgUrl": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/23/ec86a309-9b06-48e2-9adc-35753f06bc0a_Food3BU.png"
+        },
+        {
+            "id": 2,
+            "imgUrl": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/23/b5c57bbf-df54-4dad-95d1-62e3a7a8424d_IM3BU.png"
+        },
+        {
+            "id": 3,
+            "imgUrl": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/23/b6d9b7ab-91c7-4f72-9bf2-fcd4ceec3537_DO3BU.png"
+        },
+        {
+            "id": 4,
+            "imgUrl": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/testing/seo-home/Sushi_replace.png"
+        }
+    ],
+    "chinese": [
+        {
+            "id": 1,
+            "imgUrl": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Biryani.png"
+        }
+    ],
+    "grocery": [
+        {
+            "id": 1,
+            "imgUrl": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/CIW/2025/5/14/43e3c412-4ca9-4894-82ba-24b69da80aa6_06c0d2a9-804c-4bf1-8725-7ebd234e144a",
+            "veg":"This is Potato"
+        }
+    ],
+    "hotel": [
+        {
+            "id": 1,
+            "imgUrl": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1709117268/01c26b754ac6ec7019038313acfef1c0.jpg"
+        }
+    ],
+    "howuse": [
+        {
+            "id": 1,
+            "step":"step1",
+            "cont":"Install the Swiggy Owner App"
+        },
+         {
+            "id": 1,
+            "step":"step2",
+            "cont":"Install the Swiggy Owner App"
+        },
+         {
+            "id": 1,
+            "step":"step3",
+            "cont":"Install the Swiggy Owner App"
+        }
+    ]
+            
+}
