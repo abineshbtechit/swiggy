@@ -1,6 +1,8 @@
 import React from 'react'
 import "./App.css"
 import { useState, useEffect } from 'react';
+import { API } from "./config";
+
 
 function Parter() {
     const texts = ["Welcome!", "Hello World!", "React Rocks!", "Let's Code!"];
