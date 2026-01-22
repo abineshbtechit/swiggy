@@ -16,7 +16,7 @@ function Parter() {
     }, []);
 
     useEffect(() => {
-        fetch("http://localhost:3000/howuse")
+       fetch(`${API}/howuse`)
             .then((res) => res.json())
             .then((data) => setHowuse(data))
     }, []);

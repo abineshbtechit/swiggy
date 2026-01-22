@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import './App.css';
 
+
 function Front() {
 
     const [image, setImage] = useState([]);
@@ -12,7 +13,7 @@ function Front() {
 
     useEffect(
         (res) => {
-            fetch("http://localhost:3000/image")
+            fetch(`${API}/image`)
                 .then((res) => res.json())
                 .then((data) => setImage(data))
         }
@@ -20,7 +21,7 @@ function Front() {
 
     useEffect(
         (res) => {
-            fetch("http://localhost:3000/chinese")
+            fetch(`${API}/chinese`)
                 .then((res) => res.json())
                 .then((data) => setChinese(data))
         }
@@ -28,7 +29,7 @@ function Front() {
 
     useEffect(
         (res) => {
-            fetch("http://localhost:3000/grocery")
+            fetch(`${API}/grocery`)
                 .then((res) => res.json())
                 .then((data) => setGrocery(data))
 
@@ -36,7 +37,7 @@ function Front() {
     )
     useEffect(
         (res) => {
-            fetch("http://localhost:3000/hotel")
+            fetch(`${API}/hotel`)
                 .then((res) => res.json())
                 .then((data) => setHotels(data))
 
