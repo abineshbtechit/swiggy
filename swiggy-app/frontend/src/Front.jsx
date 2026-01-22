@@ -13,38 +13,88 @@ function Front() {
     const [grocery, setGrocery] = useState([]);
     const [hotels, setHotels] = useState([]);
 
-    useEffect(
-        (res) => {
-            fetch(`${API}/image`)
-                .then((res) => res.json())
-                .then((data) => setImage(data))
-        }
-        , [])
+    useEffect(() => {
+        fetch(`${API}/image`)
+            .then((res) => res.json())
+            .then((data) => {
+                if (Array.isArray(data)) {
+                    setImage(data);
+                } else if (data && data.image && Array.isArray(data.image)) {
+                    setImage(data.image);
+                } else {
+                    setImage([]);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching image:', error);
+                setImage([]);
+            });
+    }, [])
 
-    useEffect(
-        (res) => {
-            fetch(`${API}/chinese`)
-                .then((res) => res.json())
-                .then((data) => setChinese(data))
-        }
-        , [])
+    useEffect(() => {
+        fetch(`${API}/chinese`)
+            .then((res) => res.json())
+            .then((data) => {
+                if (Array.isArray(data)) {
+                    setChinese(data);
+                } else if (data && data.chinese && Array.isArray(data.chinese)) {
+                    setChinese(data.chinese);
+                } else {
+                    setChinese([]);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching chinese:', error);
+                setChinese([]);
+            });
+    }, [])
 
-    useEffect(
-        (res) => {
-            fetch(`${API}/grocery`)
-                .then((res) => res.json())
-                .then((data) => setGrocery(data))
+    useEffect(() => {
+        fetch(`${API}/grocery`)
+            .then((res) => res.json())
+            .then((data) => {
+                if (Array.isArray(data)) {
+                    setGrocery(data);
+                } else if (data && data.grocery && Array.isArray(data.grocery)) {
+                    setGrocery(data.grocery);
+                } else {
+                    setGrocery([]);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching grocery:', error);
+                setGrocery([]);
+            });
+    }, [])
 
-        }
-    )
-    useEffect(
-        (res) => {
-            fetch(`${API}/hotel`)
-                .then((res) => res.json())
-                .then((data) => setHotels(data))
+    useEffect(() => {
+        fetch(`${API}/hotel`)
+            .then((res) => res.json())
+            .then((data) => {
+                if (Array.isArray(data)) {
+                    setHotels(data);
+                } else if (data && data.hotel && Array.isArray(data.hotel)) {
+                    setHotels(data.hotel);
+                } else {
+                    setHotels([]);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching hotel:', error);
+                setHotels([]);
+            });
+    }, [])
 
-        }
-    )
+    useEffect(() => {
+        fetch(`${API}/grocery`)
+            .then((res) => res.json())
+            .then((data) => setGrocery(data))
+    }, [])
+    useEffect(() => {
+        fetch(`${API}/hotel`)
+            .then((res) => res.json())
+            .then((data) => setHotels(data))
+    }, [])
 
 
     return (
@@ -112,7 +162,7 @@ function Front() {
                 </div>
 
                 <div className='d-flex'>
-                    {image.map(
+                    {Array.isArray(image) && image.map(
                         (img) => {
                             return (
                                 <div key={img.id} className="d-flex flex-row zoom-card" id='banner'>
@@ -149,7 +199,7 @@ function Front() {
                     >
                         {Array.from({ length: 20 }).map((_, i) => (
                             <div key={i} className="d-flex flex-row flex-wrap">
-                                {chinese.map((chn) => (
+                                {Array.isArray(chinese) && chinese.map((chn) => (
                                     <div key={chn.id + '-' + i} className="text-center  zoom-card">
                                         <img
                                             src={chn.imgUrl}
@@ -178,7 +228,7 @@ function Front() {
                     >
                         {Array.from({ length: 20 }).map((_, i) => (
                             <div key={i} className="d-flex flex-row">
-                                {chinese.map((chn) => (
+                                {Array.isArray(chinese) && chinese.map((chn) => (
                                     <div key={chn.id + '-' + i} className="text-center zoom-card">
                                         <img
                                             src={chn.imgUrl}
@@ -219,7 +269,7 @@ function Front() {
                 >
                     {Array.from({ length: 20 }).map((_, i) => (
                         <div key={i} className="d-flex flex-row">
-                            {grocery.map((gro) => (
+                            {Array.isArray(grocery) && grocery.map((gro) => (
                                 <div
                                     key={gro.id + '-' + i}
                                     className="text-center position-relative con"
@@ -262,7 +312,7 @@ function Front() {
                 >
                     {Array.from({ length: 10 }).map((_, i) => (
                         <div key={i} className="d-flex flex-row block">
-                            {hotels.map((hot) => (
+                            {Array.isArray(hotels) && hotels.map((hot) => (
                                 <div
                                     key={hot.id + '-' + i}
                                     className="d-flex justify-content-center align-items-center flex-column text-center card"

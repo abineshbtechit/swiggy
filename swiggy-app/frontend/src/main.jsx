@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Front from "./Front.jsx";
-import Signup from "./signup.jsx";
+import Signup from "./Signup.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Chatcart from "./Chatcart.jsx";
-import Signin from './signin';
+import Signin from './Signin';
 import Parter from "./Parter.jsx";
 
 
